@@ -5,6 +5,17 @@
 #include <iostream>
 #include <vector>
 
+struct hitmapEntry {
+    int alwaysZero;
+    int head;
+    int chest;
+    int stomach;
+    int leftArm;
+    int rightArm;
+    int leftLeg;
+    int rightLeg;
+};
+
 struct statsEntry {
 	char name[512];
 	char steamid[512];
@@ -19,7 +30,7 @@ struct statsEntry {
 	unsigned int bDefused;
 	unsigned int bPlants;
 	unsigned int bExplosions;
-	unsigned int bodyHits[9];
+	hitmapEntry hitmap;
 };
 
 class csstats {

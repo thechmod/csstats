@@ -22,6 +22,7 @@ void csstats::load () {
         while (!feof(bfp)) {
             statsEntry entry;
 
+            // Read stats
             fread (&nextLine, sizeof(unsigned short int), 1, bfp);
             fread (&entry.name[0], nextLine, 1, bfp);
             fread (&nextLine, sizeof(unsigned short int), 1, bfp);
@@ -37,7 +38,17 @@ void csstats::load () {
             fread (&entry.bDefused, sizeof(unsigned int), 1, bfp);
             fread (&entry.bPlants, sizeof(unsigned int), 1, bfp);
             fread (&entry.bExplosions, sizeof(unsigned int), 1, bfp);
-            fread (&entry.bodyHits, sizeof(entry.bodyHits), 1, bfp);
+
+            // Read hitmap
+            fread(&entry.hitmap.alwaysZero, sizeof(int), 1, bfp);
+            fread(&entry.hitmap.head, sizeof(int), 1, bfp);
+            fread(&entry.hitmap.chest, sizeof(int), 1, bfp);
+            fread(&entry.hitmap.stomach, sizeof(int), 1, bfp);
+            fread(&entry.hitmap.leftArm, sizeof(int), 1, bfp);
+            fread(&entry.hitmap.rightArm, sizeof(int), 1, bfp);
+            fread(&entry.hitmap.leftLeg, sizeof(int), 1, bfp);
+            fread(&entry.hitmap.rightLeg, sizeof(int), 1, bfp);
+            fread(&entry.hitmap.alwaysZero, sizeof(int), 1, bfp);
 
             csstats::stats.push_back(entry);
         }

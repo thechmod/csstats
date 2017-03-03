@@ -23,6 +23,15 @@ int main() {
 			std::cout << "Bomb defused: " << obj.stats[i].bDefused << std::endl;
 			std::cout << "Bomb plants: " << obj.stats[i].bPlants << std::endl;
 			std::cout << "Bomb explosions: " << obj.stats[i].bExplosions << std::endl;
+
+            std::cout << "Hitmap: " << std::endl;
+            std::cout << "\tHead: " << obj.stats[i].hitmap.head << std::endl;
+            std::cout << "\tChest: " << obj.stats[i].hitmap.chest << std::endl;
+            std::cout << "\tStomach: " << obj.stats[i].hitmap.stomach << std::endl;
+            std::cout << "\tLeft arm: " << obj.stats[i].hitmap.leftArm << std::endl;
+            std::cout << "\tRight arm: " << obj.stats[i].hitmap.rightArm << std::endl;
+            std::cout << "\tLeft leg: " << obj.stats[i].hitmap.leftLeg << std::endl;
+            std::cout << "\tRight leg: " << obj.stats[i].hitmap.rightLeg << std::endl;
 		}
 	}
 
